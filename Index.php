@@ -1,7 +1,9 @@
 <?php
-include "Contrib.php";
+include "php1.php";
+include "php2.php";
 
-$contr = New Contrib();
+$php1 = New php1();
+$php2 = New php2();
 
 
 
@@ -14,7 +16,8 @@ $contr = New Contrib();
     <title></title>
   </head>
   <body>
-      <div class="">
+      <!-- 1ое задание -->
+      <div>
          <form  method="post">
              <input type="number" name="summ" placeholder="сумма вклада" >
              <br />
@@ -26,7 +29,22 @@ $contr = New Contrib();
           </form>
         </div>
         <div>
-            <? $contr->setContribution() ?>
+            <? $php1->setContribution() ?>
+        </div>
+
+        <!-- 2ое задание -->
+        <div>
+            <form  method="post">
+                <input type="number" name="mes" placeholder="месяц" >
+                <br />
+                <input type="number" name="day" placeholder="день" >
+                <br />
+                <input type="submit" name="otpr" value="Тест" >
+             </form>
+        </div>
+        <div>
+            <?= $_POST['day']?>
+            <?$php2->setMes() ?>
         </div>
 
   </body>

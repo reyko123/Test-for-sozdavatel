@@ -30,10 +30,16 @@ class php2
 
     public  function setMes()
     {
-        if ($this->mes < 1 || $this->mes > 12) {
+        if ($_POST['otpr'] && ($this->mes < 1 || $this->mes > 12)) {
             echo 'введите месяц от 1 до 12';
         } else {
-             $this->getMes();
+             if ($_POST['day'] && ($_POST['day'] < 1 || $_POST['day'] >31)) {
+                echo "Дней в месяце всего 31";
+            } else {
+                echo ($_POST['day']) . " ";
+                $this->getMes();
+            }
+
         }
     }
 }

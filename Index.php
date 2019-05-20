@@ -1,9 +1,11 @@
 <?php
 include "php1.php";
 include "php2.php";
+include "php3.php";
 
 $php1 = New php1();
 $php2 = New php2();
+$php3 = New php3();
 
 
 
@@ -16,7 +18,7 @@ $php2 = New php2();
     <title></title>
   </head>
   <body>
-      <!-- 1ое задание -->
+      <!-- 1ое задание - вклад-->
       <div>
          <form  method="post">
              <input type="number" name="summ" placeholder="сумма вклада" >
@@ -32,7 +34,7 @@ $php2 = New php2();
             <? $php1->setContribution() ?>
         </div>
 
-        <!-- 2ое задание -->
+        <!-- 2ое задание - месяцы-->
         <div>
             <form  method="post">
                 <input type="number" name="mes" placeholder="месяц" >
@@ -43,9 +45,26 @@ $php2 = New php2();
              </form>
         </div>
         <div>
-            <?= $_POST['day']?>
             <?$php2->setMes() ?>
         </div>
 
+        <!-- 3ее задание - калькулятор-->
+        <div >
+            <form  method="post">
+                <input type="number" name="num1" >
+                <select name="select">
+                      <option  selected>+</option>
+                      <option>-</option>
+                      <option>*</option>
+                      <option>/</option>
+                </select>
+                <input type="number" name="num2">
+                <br />
+                <input type="submit" name="count" value="Посчитать" >
+            </form>
+        </div>
+        <div >
+            <? $php3->setRes();?>
+        </div>
   </body>
 </html>

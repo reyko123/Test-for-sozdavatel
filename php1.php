@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Расчет прибыли по вкладу
+ */
 
 class php1
 {
@@ -13,7 +15,7 @@ class php1
 
     function __construct ()
     {
-        $this->summ = isset($_POST['summ']) ? $_POST['summ'] :'' ;
+        $this->summ = isset($_POST['summ']) ? $_POST['summ'] :'';
         $this->i = isset($_POST['i']) ? $_POST['i'] : '';
         $this->months = isset($_POST['months']) ? $_POST['months'] : '';
         $this->k = 12;
@@ -29,7 +31,7 @@ class php1
         }
 
     }
-    
+
      public function setContribution()
     {
         if (isset($_POST['go'])) {

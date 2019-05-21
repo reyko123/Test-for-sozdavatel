@@ -1,13 +1,16 @@
 <?php
 
-
+/**
+ * Загрузка файлов в папку на сервере
+ */
 
 class php4
 {
-    private $file_name; // название файла
-    private $file_tmp; // путь до временного хранилища
+    protected $file_name; // название файла
+    protected $file_tmp; // путь до временного хранилища
     private $file_type; //тип файла
     private $file_errors; //ошибки
+
     function __construct()
     {
        $this->file_name = $_FILES ['image']['name'];
@@ -17,34 +20,47 @@ class php4
     }
 
     //валидация файла
-    private function Validate() {
-        if ($this->file_errors >0) {
+    private function Validate()
+    {
+    if ($this->file_errors >0) {
 
-            switch ($this->file_errors) {
-                case '1':
-                    echo "Ошибка: слишком большой размер файла";
-                    break;
-                case '3':
-                    echo "Ошибка: файл не загружен полностью";
-                    break;
-                case '4':
-                    echo "Ошибка: файл не загружен";
-                    break;
-            }
-            exit();
+        switch ($this->file_errors) {
+            case '1':
+                echo "Ошибка: слишком большой размер файла";
+                break;
+            case '3':
+                echo "Ошибка: файл не загружен полностью";
+                break;
+            case '4':
+                echo "Ошибка: файл не загружен";
+                break;
         }
-
-        if ($this->file_type != image/jpeg || $this->file_type != image/png) {
-            echo 'Загрузите файл нужного формата (jpg,png)';
-            exit();
-        }
-
-        return true;
+        exit();
     }
+
+    if ($this->file_type != 'image/png' xor $this->file_type != 'image/jpeg') {
+    } else {
+        echo 'Загрузите файл нужного формата (jpg,png)';
+        exit();
+    }
+
+    return true;
+    }
+
     // папка, в которую отправлять картинки
-    private function getPath(){
-       return $path =     'Images/' . $this->file_name;
+    protected function getPath()
+    {
+       return $path = 'images/'. $this->file_name;
     }
-
-
+    // отправка файла
+    public function moveUpload()
+    {
+        if ($_POST['send'] && $this->Validate())
+            if  (move_uploaded_file($this->file_tmp, $this->getPath())) {
+                echo "Файл". $this->file_name. "успешно загружен";
+            } else {
+                echo "Возможная атака с участием загрузки файла:";
+                echo "файл '".  $this->file_name. "'.";
+            }
+    }
 }

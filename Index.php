@@ -2,10 +2,14 @@
 include "php1.php";
 include "php2.php";
 include "php3.php";
+include "php4.php";
+include "php42.php";
 
 $php1 = New php1();
 $php2 = New php2();
 $php3 = New php3();
+$php4 = New php4();
+$php42 = New php42();
 
 
 
@@ -67,11 +71,21 @@ $php3 = New php3();
             <? $php3->setRes();?>
         </div>
 
-        <!-- 4ое задание - калькулятор  - галерея-->
-        <form  action="" method="post" enctype="multipart/form-data">
-            <input type="file" name="image">
-            <input type="submit" name="" value="Отправить">
+        <!-- 4ое задание  - галерея-->
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="hidden" name="MAX_FILE_SIZE" value="10000">
+                <input type="submit" name="send" value="Отправить">
+            </form>
+        </div>
+        <div >
+            <? $php4->moveUpload();?>
+        </div>
 
-        </form>
+        <div >
+            <? $php42->PrintImage();?>
+        </div>
+
   </body>
 </html>

@@ -12,7 +12,7 @@ class php3
         $this->num1 = isset($_POST['num1']) ? $_POST['num1'] :'' ;
         $this->num2 = isset($_POST['num2']) ? $_POST['num2'] :'' ;
     }
-
+    // калькулятор
     private function getValue()
     {
         if ($_POST['select'] == '+') {

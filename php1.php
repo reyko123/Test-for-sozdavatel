@@ -18,7 +18,7 @@ class php1
         $this->months = isset($_POST['months']) ? $_POST['months'] : '';
         $this->k = 12;
     }
-
+    // формула расчета
     private function  getContribution()
     {
         if ($_POST['summ'] && $_POST['i'] && $_POST['months']) {
@@ -29,7 +29,7 @@ class php1
         }
 
     }
-
+    
      public function setContribution()
     {
         if (isset($_POST['go'])) {

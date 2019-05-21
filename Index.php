@@ -66,5 +66,12 @@ $php3 = New php3();
         <div >
             <? $php3->setRes();?>
         </div>
+
+        <!-- 4ое задание - калькулятор  - галерея-->
+        <form  action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit" name="" value="Отправить">
+
+        </form>
   </body>
 </html>

@@ -2,7 +2,7 @@
 
 class php2
 {
-    private $mes;
+    private $mes;  //месяцы
     function __construct()
     {
         $this->mes = isset($_POST['mes']) ? $_POST['mes'] :'' ;

@@ -103,10 +103,10 @@ $php5 = New php5();
         </div>
         <div>
             <form method="post">
-                <input type="number" name="minuts" placeholder="минуты" >
-                <br />
                 <input type="number" name="hours" placeholder="часы" >
-                <br />
+                <br>
+                <input type="number" name="minuts" placeholder="минуты" >
+                <br>
                 <input type="submit" name="degree" value="Расчитать" >
             </form>
         </div>

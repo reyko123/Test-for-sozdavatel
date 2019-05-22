@@ -40,8 +40,7 @@ class php4
 
     if ($this->file_type != 'image/png' xor $this->file_type != 'image/jpeg') {
     } else {
-        echo 'Загрузите файл нужного формата (jpg,png)';
-        exit();
+        exit('Загрузите файл нужного формата (jpg,png)');
     }
 
     return true;

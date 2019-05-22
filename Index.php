@@ -79,6 +79,23 @@ $php5 = New php5();
             <?$php3->setRes();?>
         </div>
 
+        <!-- 5ое задание - градусы между стрелками -->
+        <div>
+            <p>5ое задание - градусы между стрелками</p>
+        </div>
+        <div>
+            <form method="post">
+                <input type="number" name="hours" placeholder="часы" >
+                <br>
+                <input type="number" name="minuts" placeholder="минуты" >
+                <br>
+                <input type="submit" name="degree" value="Расчитать" >
+            </form>
+        </div>
+        <div>
+            <?$php5->printRes()?>
+        </div>
+
         <!-- 4ое задание - галерея-->
         <div>
             <p>4ое задание - галерея</p>
@@ -95,23 +112,6 @@ $php5 = New php5();
         </div>
         <div>
             <? $php42->PrintImage();?>
-        </div>
-
-        <!-- 5ое задание - градусы между стрелками -->
-        <div>
-            <p>5ое задание - градусы между стрелками</p>
-        </div>
-        <div>
-            <form method="post">
-                <input type="number" name="hours" placeholder="часы" >
-                <br>
-                <input type="number" name="minuts" placeholder="минуты" >
-                <br>
-                <input type="submit" name="degree" value="Расчитать" >
-            </form>
-        </div>
-        <div>
-            <?$php5->printRes()?>
         </div>
     </body>
 </html>
